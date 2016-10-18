@@ -32,8 +32,8 @@ public class FizzBuzzPrinter {
 		}
 	}
 
-	private static boolean isDivisableBy(int value, int divider) {
-		return value % divider == 0;
+	private static boolean isDivisableBy(int value, int multiplier) {
+		return value % multiplier == 0;
 	}
 	
 }

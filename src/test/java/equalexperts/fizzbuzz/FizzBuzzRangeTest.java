@@ -16,7 +16,7 @@ public class FizzBuzzRangeTest {
 		
 		try{			
 			range(2, 1);
-		}
+		} 
 		catch(IllegalArgumentException e){
 			actualExceptionMessage = e.getMessage();
 		}
