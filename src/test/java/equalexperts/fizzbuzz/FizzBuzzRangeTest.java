@@ -27,8 +27,8 @@ public class FizzBuzzRangeTest {
 	@Test	
 	public void canRetrieveFizzBuzzRangeIntStreamWithInclusiveEndOfRange(){
 		final int[] expectedRangeArray = {1,2,3,4,5};		
-		final int[] actuallRangeArray = range(1, 5).rangeStream().toArray();
-		assertArrayEquals(expectedRangeArray, actuallRangeArray);
+		final int[] actualRangeArray = range(1, 5).rangeStream().toArray();
+		assertArrayEquals(expectedRangeArray, actualRangeArray);
 	}	
 
 }
