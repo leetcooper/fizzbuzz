@@ -46,7 +46,7 @@ public class FizzBuzzPrinterTest {
 	
 	@Test
 	public void canPrintCorrectFizzBuzzStringFor1To20Range(){
-		final String expectedOutput = "1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz ";
+		final String expectedOutput = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz ";
 		FizzBuzzPrinter.printFizzBuzz(range(1, 20));
 	    assertThat(testableStream.toString(), equalTo(expectedOutput));
 	}
