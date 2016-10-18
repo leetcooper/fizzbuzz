@@ -2,8 +2,13 @@ package equalexperts.fizzbuzz;
 
 public class FizzBuzzPrinter {
 	private static final String FIZZ = "fizz ";
+	private static final int FIZZ_MULIPLE = 3;
+	
 	private static final String BUZZ = "buzz ";
+	private static final int BUZZ_MULIPLE = 5;
+	
 	private static final String FIZZBUZZ = "fizzbuzz ";
+	private static final int FIZZBUZZ_MULIPLE = 15;
 	
 	public static void printFizzBuzz(final FizzBuzzRange fizzBuzzRange){
 		fizzBuzzRange
@@ -12,14 +17,14 @@ public class FizzBuzzPrinter {
 			.forEach(System.out::print);
 	}
 	
-	public static String integerToFizzBuzzString(int value){
-		if(isDivisableBy(value, 15)){
+	private static String integerToFizzBuzzString(int value){
+		if(isDivisableBy(value, FIZZBUZZ_MULIPLE)){
 			return FIZZBUZZ;
 		}		
-		if(isDivisableBy(value, 3)){
+		if(isDivisableBy(value, FIZZ_MULIPLE)){
 			return FIZZ;
 		}
-		if(isDivisableBy(value, 5)){
+		if(isDivisableBy(value, BUZZ_MULIPLE)){
 			return BUZZ;
 		}		
 		else{
