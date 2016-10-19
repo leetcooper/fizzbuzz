@@ -7,7 +7,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-public class FizzBuzzRangeTest {
+public class FizzBuzzRangeUnitTest {
 
 	@Test	
 	public void fizzBuzzRangeThrowsIllegalArgumentExceptionWhenGivenABadRange(){

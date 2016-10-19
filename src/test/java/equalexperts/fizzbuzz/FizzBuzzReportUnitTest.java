@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import java.math.BigDecimal;
 
-public class FizzBuzzReportTest {
+public class FizzBuzzReportUnitTest {
 
 	@Test	
 	public void canReportIdentifyMultipleLuckyStrings(){
@@ -125,6 +125,29 @@ public class FizzBuzzReportTest {
 		final FizzBuzzReport fizzBuzzReport = new FizzBuzzReport();
 		final Long longValue = new BigDecimal(Integer.MAX_VALUE).add(BigDecimal.ONE).longValue();
 		fizzBuzzReport.includeStringInReport(longValue.toString());
+	}
+	
+	@Test
+	public void canMergeReports(){
+		final FizzBuzzReport report1 = new FizzBuzzReport();
+		report1.includeStringInReport("1");
+		report1.includeStringInReport(FizzBuzzString.BUZZ);
+		report1.includeStringInReport(FizzBuzzString.FIZZ);
+		report1.includeStringInReport(FizzBuzzString.FIZZBUZZ);
+		report1.includeStringInReport(FizzBuzzString.LUCKY);
+		final FizzBuzzReport report2 = new FizzBuzzReport();
+		report2.includeStringInReport("1");
+		report2.includeStringInReport(FizzBuzzString.BUZZ);
+		report2.includeStringInReport(FizzBuzzString.FIZZ);
+		report2.includeStringInReport(FizzBuzzString.FIZZBUZZ);
+		report2.includeStringInReport(FizzBuzzString.LUCKY);
+		final FizzBuzzReport merge = report1.merge(report2);
+		assertThat(merge.getIntegerCount(), equalTo(2));
+		assertThat(merge.getLuckyCount(), equalTo(2));
+		assertThat(merge.getBuzzCount(), equalTo(2));
+		assertThat(merge.getFizzCount(), equalTo(2));
+		assertThat(merge.getFizzBuzzCount(), equalTo(2));	
+
 	}	
 	
 }

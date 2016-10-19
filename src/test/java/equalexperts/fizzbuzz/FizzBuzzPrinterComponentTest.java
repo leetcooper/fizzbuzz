@@ -11,7 +11,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class FizzBuzzPrinterTest {
+public class FizzBuzzPrinterComponentTest {
 	
 	private ByteArrayOutputStream testableStream;
 	private PrintStream testablePrintStream;
