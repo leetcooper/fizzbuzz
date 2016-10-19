@@ -33,7 +33,7 @@ public class FizzBuzzPrinterTest {
 			testablePrintStream.close();
 		}
 		catch(Exception e){
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 	}	
 
@@ -45,10 +45,30 @@ public class FizzBuzzPrinterTest {
 	}
 	
 	@Test
+	public void printFizzBuzzCanHandleNullRange(){
+		FizzBuzzPrinter.printFizzBuzz(null);	
+		assertThat(testableStream.toString(), equalTo(""));
+	}
+	
+	@Test
 	public void canPrintCorrectFizzBuzzStringFor1To20Range(){
-		final String expectedOutput = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz ";
+		final String expectedOutput = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz \nfizz: 4\r\nbuzz: 3\r\nfizzbuzz:1\r\nlucky: 2\r\ninteger: 10";
 		FizzBuzzPrinter.printFizzBuzz(range(1, 20));
 	    assertThat(testableStream.toString(), equalTo(expectedOutput));
 	}
+	
+	@Test
+	public void canPrintCorrectFizzBuzzStringFor0To1Range(){
+		final String expectedOutput = "0 1 \nfizz: 0\r\nbuzz: 0\r\nfizzbuzz:0\r\nlucky: 0\r\ninteger: 2";
+		FizzBuzzPrinter.printFizzBuzz(range(0, 1));
+	    assertThat(testableStream.toString(), equalTo(expectedOutput));
+	}
+	
+	@Test
+	public void canPrintCorrectFizzBuzzStringForNegativeRange20to1(){
+		final String expectedOutput = "buzz -19 fizz -17 -16 fizzbuzz -14 lucky fizz -11 buzz fizz -8 -7 fizz buzz -4 lucky -2 -1 \nfizz: 4\r\nbuzz: 3\r\nfizzbuzz:1\r\nlucky: 2\r\ninteger: 10";
+		FizzBuzzPrinter.printFizzBuzz(range(-20, -1));
+	    assertThat(testableStream.toString(), equalTo(expectedOutput));
+	}	
 	
 }
